@@ -27,6 +27,7 @@ class FeedsController < ApplicationController
   end
 
   def show
+    @favo = current_user.favos.find_by(feed_id: @feed.id)
   end
 
   def edit

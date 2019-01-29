@@ -1,2 +1,15 @@
 <h1>Feeds#confirm</h1>
 <p>Find me in app/views/feeds/confirm.html.erb</p>
+
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image %>
+
+  <p>タイトル:<%= @feed.title %></p>
+  <p>本文:<%= @feed.content %></p>
+  <p>画像:<%= @feed.image %></p>
+  <%= form.submit  "登録する" %>
+<% end %>

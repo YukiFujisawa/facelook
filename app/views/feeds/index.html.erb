@@ -1,2 +1,23 @@
 <h1>Feeds#index</h1>
 <p>Find me in app/views/feeds/index.html.erb</p>
+
+
+<h1>Index</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>image</th>
+  </tr>
+  <% @feeds.each do |feed| %>
+    <tr>
+      <td><%= feed.title %></td>
+      <td><%= feed.content %></td>
+      <td><%= feed.image %></td>
+      <td><%= link_to "Detail", feed_path(feed.id) %></td>
+      <td><%= link_to "Edit", edit_feed_path(feed.id) %></td>
+      <td><%= link_to "Destroy", feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "New feed", new_feed_path %>

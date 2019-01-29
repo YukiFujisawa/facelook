@@ -1,2 +1,26 @@
 <h1>Feeds#show</h1>
 <p>Find me in app/views/feeds/show.html.erb</p>
+
+<h1>ブログ一覧</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+    <th>画像パス</th>
+  </tr>
+
+<% @feeds.each do |feed| %>
+  <tr>
+    <td><%= feed.title %></td>
+    <td><%= feed.content %></td>
+    <td><%= feed.image %></td>
+
+    <td><%= link_to '詳細を確認する', feed_path(feed.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to '新しくブログを投稿する', new_feed_path %>

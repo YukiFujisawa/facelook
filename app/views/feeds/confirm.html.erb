@@ -13,3 +13,10 @@
   <p>画像:<%= @feed.image %></p>
   <%= form.submit  "登録する" %>
 <% end %>
+
+<%= form_with(model: @feed, url: new_feed_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>

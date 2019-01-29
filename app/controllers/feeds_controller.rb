@@ -14,7 +14,11 @@ class FeedsController < ApplicationController
   end
 
   def new
-    @feed = Feed.new
+    if params[:back]
+      @feed = Feed.new(feed_params)
+    else
+      @feed = Feed.new
+    end
   end
 
   def confirm
@@ -28,7 +32,7 @@ class FeedsController < ApplicationController
   end
 
   def update
-    if @feed.update(feed_parms)
+    if @feed.update(feed_params)
       redirect_to feeds_path, notice: "Feedを編集しました"
     else
       render "edit"

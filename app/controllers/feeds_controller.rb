@@ -2,15 +2,12 @@ class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
   def index
     @feeds = Feed.all
-    raise
   end
 
   def create
     @feed = current_user.feeds.build(feed_params)
     if @feed.save
-          binding.pry
       redirect_to feeds_path, notice: "Feedを投稿しました"
-
     else
       render "new"
     end
@@ -52,7 +49,7 @@ class FeedsController < ApplicationController
   private
 
   def feed_params
-    params.require(:feed).permit(:title, :content, :image)
+    params.require(:feed).permit(:title, :content, :image, :image_cache)
   end
 
   def set_feed

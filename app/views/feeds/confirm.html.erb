@@ -7,10 +7,11 @@
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
+  <%= form.hidden_field :image_cache %>
 
   <p>タイトル:<%= @feed.title %></p>
   <p>本文:<%= @feed.content %></p>
-  <p>画像:<%= @feed.image %></p>
+  <p>画像:<%= image_tag @feed.image.url %></p>
   <%= form.submit  "登録する" %>
 <% end %>
 
@@ -18,5 +19,6 @@
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
+  <%= form.hidden_field :image_cache %>
   <%= form.submit "もどる", name: 'back' %>
 <% end %>

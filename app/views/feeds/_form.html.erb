@@ -21,7 +21,9 @@
   </div>
   <div class="feed_image">
     <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= image_tag(@feed.image.url) if @feed.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
   </div>
   <%= form.submit %>
 <% end %>

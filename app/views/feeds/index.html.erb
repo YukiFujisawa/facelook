@@ -22,14 +22,9 @@
             </div>
             <p>タイトル：<%= feed.title %></p>
             <div class="post_image">
-              img
-
-
               <% if feed.image.url %>
                 <p>画像:<%= image_tag feed.image.url %></p>
               <% end %>
-
-
             </div>
             <div class="post_content">
               内容：<%= feed.content %>
@@ -45,7 +40,6 @@
             </table>
           </div>
         <% end %>
-
       </div>
 
 <!-- ここまで -->

@@ -1,3 +1,22 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+ul {
+  padding: 0;
+}
+
+.main {
+  // border: 1px solid gray;
+  background-color: #E8EAED;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.maincolumn {
+  border: 1px solid gray;
+}

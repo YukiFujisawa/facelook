@@ -1,0 +1,52 @@
+// Place all the styles related to the favos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #E8EAED;
+}
+
+.navbar {
+  margin: 0;
+  background-color: #4267B0;
+  border-bottom: 2px solid white;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-nav {
+    float: right;
+    margin: 0;
+}
+
+.navbar-nav li a {
+  color: white;
+}
+
+.navbar-nav li a:hover {
+  color: black;
+}
+
+.navbar-brand {
+  font-size: 32px;
+  color: white;
+  font-family: impact;
+}
+
+.header {
+  float:left;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #8B8587;
+}
+
+.footer p {
+  text-align: center;
+}

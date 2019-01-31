@@ -1,0 +1,24 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.toppage {
+  min-height: calc(100vh - 112px);
+  // background-color: #4267B0;
+  position: relative;
+}
+
+.toppage p {
+  font-size: 6em;
+  color: white;
+  font-family: impact;
+
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  height: 1em;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}

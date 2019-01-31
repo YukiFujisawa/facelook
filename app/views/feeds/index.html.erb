@@ -1,21 +1,36 @@
-<h1>Index</h1>
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th>image</th>
-  </tr>
-  <% @feeds.each do |feed| %>
-    <tr>
-      <td><%= feed.user.name %></td>
-      <td><%= feed.title %></td>
-      <td><%= feed.content %></td>
-      <td><%= feed.image %></td>
-      <td><%= link_to "Detail", feed_path(feed.id) %></td>
-      <td><%= link_to "Edit", edit_feed_path(feed.id) %></td>
-      <td><%= link_to "Destroy", feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
-    </tr>
-  <% end %>
-</table>
-<%= link_to "New feed", new_feed_path %>
+<div class="main container-fluid">
+  <div class="row">
+
+    <div class="leftcolumn col-md-2">
+      HIDARI
+    </div>
+
+    <div class="maincolumn col-md-6">
+      <h1>Index</h1>
+      <table>
+        <tr>
+          <th>User</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th>image</th>
+        </tr>
+        <% @feeds.each do |feed| %>
+          <tr>
+            <td><%= feed.user.name %></td>
+            <td><%= feed.title %></td>
+            <td><%= feed.content %></td>
+            <td></td>
+            <td><%= link_to "Detail", feed_path(feed.id) %></td>
+            <td><%= link_to "Edit", edit_feed_path(feed.id) %></td>
+            <td><%= link_to "Destroy", feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+          </tr>
+        <% end %>
+      </table>
+      <%= link_to "New feed", new_feed_path %>
+    </div>
+
+    <div class="rightcolumn col-md-4">
+      MIGI
+    </div>
+  </div>
+</div>

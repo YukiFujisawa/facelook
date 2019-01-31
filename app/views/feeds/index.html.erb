@@ -14,7 +14,8 @@
 
 <!-- ここからタイムライン作成テスト -->
       <h1>Main</h1>
-        <% @feeds.each do |feed| %>
+        <%= link_to "New feed", new_feed_path %>
+        <% @feeds.reverse_each do |feed| %>
           <div class="feed_panel">
             <div class="user_plof">
               <%= feed.user.name %>さんの投稿
@@ -29,9 +30,6 @@
               <% end %>
 
 
-
-
-
             </div>
             <div class="post_content">
               内容：<%= feed.content %>
@@ -39,13 +37,15 @@
             <table>
               <tr>
                 <td><%= link_to "Detail", feed_path(feed.id) %></td>
-                <td><%= link_to "Edit", edit_feed_path(feed.id) %></td>
-                <td><%= link_to "Destroy", feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+                <% if feed.user_id == current_user.id %>
+                  <td><%= link_to "Edit", edit_feed_path(feed.id) %></td>
+                  <td><%= link_to "Destroy", feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+                <% end %>
               </tr>
             </table>
           </div>
         <% end %>
-      <%= link_to "New feed", new_feed_path %>
+
       </div>
 
 <!-- ここまで -->

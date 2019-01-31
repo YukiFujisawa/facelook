@@ -2,35 +2,62 @@
   <div class="row">
 
     <div class="leftcolumn col-md-2">
-      HIDARI
+      <h3>HIDARI</h3>
+      <ul>
+        <li>List1</li>
+        <li>List2</li>
+        <li>List3</li>
+      </ul>
     </div>
 
     <div class="maincolumn col-md-6">
-      <h1>Index</h1>
-      <table>
-        <tr>
-          <th>User</th>
-          <th>Title</th>
-          <th>Content</th>
-          <th>image</th>
-        </tr>
+
+<!-- ここからタイムライン作成テスト -->
+      <h1>Main</h1>
         <% @feeds.each do |feed| %>
-          <tr>
-            <td><%= feed.user.name %></td>
-            <td><%= feed.title %></td>
-            <td><%= feed.content %></td>
-            <td></td>
-            <td><%= link_to "Detail", feed_path(feed.id) %></td>
-            <td><%= link_to "Edit", edit_feed_path(feed.id) %></td>
-            <td><%= link_to "Destroy", feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
-          </tr>
+          <div class="feed_panel">
+            <div class="user_plof">
+              <%= feed.user.name %>さんの投稿
+            </div>
+            <p>タイトル：<%= feed.title %></p>
+            <div class="post_image">
+              img
+
+
+              <% if feed.image.url %>
+                <p>画像:<%= image_tag feed.image.url %></p>
+              <% end %>
+
+
+
+
+
+            </div>
+            <div class="post_content">
+              内容：<%= feed.content %>
+            </div>
+            <table>
+              <tr>
+                <td><%= link_to "Detail", feed_path(feed.id) %></td>
+                <td><%= link_to "Edit", edit_feed_path(feed.id) %></td>
+                <td><%= link_to "Destroy", feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+              </tr>
+            </table>
+          </div>
         <% end %>
-      </table>
       <%= link_to "New feed", new_feed_path %>
-    </div>
+      </div>
+
+<!-- ここまで -->
+
 
     <div class="rightcolumn col-md-4">
-      MIGI
+      <h2>MIGI</h2>
+      <ul>
+        <li>List1</li>
+        <li>List2</li>
+        <li>List3</li>
+      </ul>
     </div>
   </div>
 </div>

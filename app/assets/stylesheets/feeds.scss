@@ -17,6 +17,13 @@ ul {
   margin-right: 0;
 }
 
-.maincolumn {
+.leftcolumn, .rightcolumn {
   border: 1px solid gray;
+  background-color: #FEFEFE;
+}
+
+.feed_panel {
+  border: 1px solid gray;
+  background-color: #FEFEFE;
+  margin-bottom: 5px;
 }

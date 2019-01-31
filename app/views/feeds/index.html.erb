@@ -11,10 +11,8 @@
     </div>
 
     <div class="maincolumn col-md-6">
-
-<!-- ここからタイムライン作成テスト -->
-      <h1>Main</h1>
-        <%= link_to "New feed", new_feed_path %>
+      <h1 class="maintitle">TIMELINE</h1>
+        <button type="button" class="btn btn-primary"><%= link_to "New feed", new_feed_path %></button>
         <% @feeds.reverse_each do |feed| %>
           <div class="feed_panel">
             <div class="user_plof">
@@ -41,9 +39,6 @@
           </div>
         <% end %>
       </div>
-
-<!-- ここまで -->
-
 
     <div class="rightcolumn col-md-4">
       <h2>MIGI</h2>

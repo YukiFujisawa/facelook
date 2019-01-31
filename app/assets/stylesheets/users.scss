@@ -1,3 +1,11 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.profile_page {
+  border: 1px solid gray;
+  background-color: #FEFEFE;
+  padding: 5px;
+  margin: 2em auto;
+}
+
+.profile_page p {
+  font-size: 14px;
+  text-align: center;
+}

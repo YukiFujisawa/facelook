@@ -1,6 +1,12 @@
-// Place all the styles related to the feeds controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.maintitle {
+  display: inline-block;
+}
+
+button a {
+  font-size: 2em;
+  color: white;
+}
+
 li {
   list-style: none;
   display: inline-block;
@@ -11,7 +17,6 @@ ul {
 }
 
 .main {
-  // border: 1px solid gray;
   background-color: #E8EAED;
   margin-left: 0;
   margin-right: 0;

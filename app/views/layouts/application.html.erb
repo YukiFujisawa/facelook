@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Facelook</title>
+    <title><%= content_for?(:html_title) ? yield(:html_title) : "NO_TITLE" %></title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -29,12 +29,13 @@
                 <% end %>
                 </li>
                 <% if logged_in? %>
-                  <li><%= link_to "Profile : #{current_user.name}", user_path(current_user.id) %></li>
-                  <li><%= link_to "Feeds", feeds_path %></li>
-                  <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+                  <li class="show_user_link"><%= link_to "Profile : #{current_user.name}", user_path(current_user.id) %></li>
+                  <li class="feeds_link"><%= link_to "Feeds", feeds_path %></li>
+                  <li class="logout_link"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+                  <li class="quit_link"><%= link_to "Quit", user_path(current_user.id), method: :delete %></li>
                 <% else %>
-                  <li><%= link_to "Sign up", new_user_path %></li>
-                  <li><%= link_to "Log in", new_session_path %></li>
+                  <li class="sign_up_link"><%= link_to "Sign up", new_user_path %></li>
+                  <li class="login_link"><%= link_to "Log in", new_session_path %></li>
                 <% end %>
               </ul>
             </div>

@@ -1,24 +1,48 @@
-# README
+# Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## setup
 
-Things you may want to cover:
+### yarn, imagemagick
 
-* Ruby version
+```bash
+$ brew install yarn
+$ brew install imagemagick
+```
 
-* System dependencies
+### Ruby
 
-* Configuration
+see: https://github.com/rbenv/rbenv
+```bash
+$ brew install rbenv
+$ rbenv init
+$ source ~/.bash_profile
+$ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+$ rbenv install 2.6.0
+$ rbenv local 2.6.0
+$ ruby -v
+ruby 2.6.0p0 (2018-12-25 revision 66547) [x86_64-darwin18]
+$ gem install bundler
+```
 
-* Database creation
+### System dependencies
 
-* Database initialization
+```bash
+$ bundle install
+$ yarn install
+```
 
-* How to run the test suite
+### Database
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+$ rails db:migrate RAILS_ENV=development
+```
 
-* Deployment instructions
+## Run
 
-* ...
+```bash
+$ rails s
+```
+
+### Access
+
+http://0.0.0.0:3000

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  resources :users, only: [:create, :new, :show]
+  resources :users, only: [:create, :new, :show, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :favos, only: [:create, :destroy]
 end

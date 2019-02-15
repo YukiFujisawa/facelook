@@ -16,10 +16,10 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: utf8
+  username: postgres
+  password: postgres
+  host: localhost
 
 development:
   <<: *default
@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: facelook_production
-  username: facelook
-  password: <%= ENV['FACELOOK_DATABASE_PASSWORD'] %>

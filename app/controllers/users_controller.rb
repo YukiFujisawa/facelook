@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-       redirect_to user_path(@user.id), notice: "ユーザーを作成しました"
+      redirect_to user_path(@user.id), notice: "ユーザーを作成しました"
     else
       render "new"
     end
